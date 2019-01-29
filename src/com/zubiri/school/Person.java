@@ -84,7 +84,7 @@ public class Person {
 
 	public boolean checkDate(Calendar date) {
 
-		if (date.compareTo(new GregorianCalendar()) > 0)
+		if (date.compareTo(new GregorianCalendar(0,0,0)) > 0)
 			return true;
 
 		return false;
@@ -93,7 +93,7 @@ public class Person {
 
 	public boolean checkDni(String dni) {
 
-		if (dni.length() == 9 && dni.substring(0, 7).matches("[0-9]+") && dni.substring(7, 8).matches("[A-Za-z]"))
+		if (dni.length() == 9 && dni.substring(0, 7).matches("[0-9]+") && dni.substring(8).matches("[A-Za-z]"))
 			return true;
 
 		return false;

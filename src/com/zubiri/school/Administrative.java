@@ -25,7 +25,7 @@ public class Administrative extends Worker {
 		return numberOfLanguages;
 	}
 
-	public String getAministrativeID() {
+	public String getAdministrativeID() {
 
 		return administrativeID;
 
@@ -50,7 +50,7 @@ public class Administrative extends Worker {
 
 	public void addLanguages(String language) {
 
-		if (!checkLanguage(language)) {
+		if (!repeatedLanguage(language)) {
 
 			languages[numberOfLanguages] = language;
 			numberOfLanguages++;
@@ -64,16 +64,16 @@ public class Administrative extends Worker {
 		languages[index] = "";
 	}
 
-	public int findLanguage(String language) {
+	public boolean repeatedLanguage(String language) {
 
 		for (int i = 0; i < languages.length; i++) {
 
 			if (languages[i].matches(language))
 
-				return i;
+				return true;
 		}
 
-		return -1;
+		return false;
 
 	}
 }

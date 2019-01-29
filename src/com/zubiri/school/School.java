@@ -64,7 +64,14 @@ public class School {
 		teachers.add(teacher);
 	}
 	public int findTeacher(String teacherID) {
-		return teachers.indexOf(teacherID);
+		
+		int index = -1;
+		for(int i = 0; i < teachers.size(); i++) {
+			
+			if(teachers.get(index).getTeacherID().matches(teacherID))
+				index = i;
+		}
+		return index;
 	}
 	public void deleteTeacher(int index) {
 		teachers.remove(index);
@@ -81,7 +88,7 @@ public class School {
 	public ArrayList<Student> getstudents(){
 		return students;
 	}
-	public void setstudents(ArrayList<Student> students) {
+	public void setStudents(ArrayList<Student> students) {
 		this.students = students;
 	}
 	public Student getStudent(int index) {

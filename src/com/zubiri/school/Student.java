@@ -24,7 +24,7 @@ public class Student extends Person {
 		return absenses;
 	}
 
-	public void setAbsenses() {
+	public void setAbsenses(int absenses) {
 
 		this.absenses = absenses;
 
